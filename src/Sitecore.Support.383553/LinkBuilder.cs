@@ -58,7 +58,7 @@ namespace Sitecore.Support.Links
             }
 
             if (!this.AlwaysIncludeServerUrl && siteInfo.Name.Equals(currentSiteName, StringComparison.OrdinalIgnoreCase) &&
-              currentHostName.Equals(hostName, StringComparison.OrdinalIgnoreCase))
+              (string.IsNullOrEmpty(currentHostName)||currentHostName.Equals(hostName, StringComparison.OrdinalIgnoreCase)))
             {
                 return defaultUrl;
             }
